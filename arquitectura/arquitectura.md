@@ -38,9 +38,9 @@ Ocupe Mermaid Ai, es una herramienta y tecnología que utiliza inteligencia arti
 
 Dicha arquitectura se eligió por su capacidad de equilibrar el robusto procesamiento de los datos juntamente con accesibilidad y seguridad de la experiencia de usuario; y se fundamentaba en 3 pilares:
 
-- **Unificación y Gobernanza de Datos**. (Fabric y OneLake), visto en la arquitectura (Bronze, Silver, Gold) garantiza  el paso de la situación cruda de los datos a formato analítico de alto valor sin duplicación y sin silos. Fabric gestiona la ingesta y transformación, lo que lleva a reducir la complejidad operativa y el movimiento de los datos.
+- **Unificación y Gobernanza de Datos**. (Fabric y OneLake),la arquitectura (Bronze, Silver, Gold) garantiza  el paso de la situación cruda de los datos a formato analítico de alto valor sin duplicación y sin silos. Fabric gestiona la ingesta y transformación, lo que lleva a reducir la complejidad operativa y el movimiento de los datos.
 
--  **MLOps y Escalabilidad Analítica** (Azure ML), visto en la separación entre los datos preparados (Fabric) y el modelado matemático (Azure ML) permite integrar el control de versiones de manera estricta sobre los modelos econométricos (cointegración y Monte Carlo), asegurando de esta forma la reproducibilidad, la trazabilidad de las métricas así como las actualizaciones sin interrumpir el servicio.
+-  **MLOps y Escalabilidad Analítica** (Azure ML), entre los datos preparados (Fabric) y el modelado matemático (Azure ML) permite integrar el control de versiones de manera estricta sobre los modelos econométricos (cointegración y Monte Carlo), asegurando de esta forma la reproducibilidad, la trazabilidad de las métricas así como las actualizaciones sin interrumpir el servicio.
 
 -  **Democratización Segura** (OpenAI + Power BI + Seguridad), ya que la arquitectura no sólo entregab un dashboard clásico para la gerencia, sino que habilitaba en el agente conversacional la adecuada conversación de forma interactiva para explorar los escenarios, todo ello bajo un perímetro de seguridad empresarial nativo (Entra ID, Key Vault) y en monitoreo continuo (Application Insights) que llevaban a saber que la información financiera confidencial no se exponía en ningún caso.
 
