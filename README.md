@@ -7,8 +7,8 @@
 
 ## como ejecutar
 
-pip install -r requirements.txt
-python src/ingesta.py
-python src/exploracion.py
-python src/modelados.py
-python src/predicion.py
+- pip install -r requirements.txt
+- python src/ingesta.py
+- python src/exploracion.py
+- python src/modelados.py
+- python src/predicion.py
