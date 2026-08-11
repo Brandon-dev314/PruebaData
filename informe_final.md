@@ -2,7 +2,7 @@
 Brandon Enrique Eroza Torres: tbdonran.23@gmail.com
 
 ## Resumen
-El análisis se identificó, el precio de cada equipo se comporta de manera diferente, por ejemplo el **Equipo 1** depende de un 97% de la materias prima Y cerca del 98%, y el **Equipo 2** en un 76% de Z. En el X.csv aunque es bastante significativa, tiene un pero menor al 4% en ambos casos(esto se puede visualizar en el dashboard adjunto).
+El análisis se identificó, el precio de cada equipo como se comporta de manera diferente, por ejemplo el **Equipo 1** depende de un 97% de la materias prima Y cerca del 98%, y el **Equipo 2** en un 76% de Z. En el X.csv aunque es bastante significativa, tiene un pero menor al 4% en ambos casos(esto se puede visualizar en el dashboard adjunto).
 
 El modelo alcanza un error histórico de 0.33% cuando los precios de las materias primas del mes se vinculan, el prognóstico no está en el modelo, sino en un futuro de 6 meses, a mas del 95% del error proviene de no saber donde estaran esas materias primas.
 
@@ -12,6 +12,7 @@ Más información en los siguientes enlaces:
 - 1. [Notebook con el análisis completo](notebook/pre_ingesta.ipynb)
 - 2. [Reporte de arquitectura](arquitectura/arquitectura.md)
 - 3. [Dashboard](reporte.pdf)
+- 4. https://pruebadata-production.up.railway.app/
 
 ## 1. Explicación del caso
 
