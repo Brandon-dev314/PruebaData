@@ -5,7 +5,7 @@
 - [Arquitectura cloud](arquitectura/reporte_arquitectura.md) — propuesta en Azure
 - pruebadata-production.up.railway.app
 
-## como ejecutar
+## Como ejecutar
 
 - pip install -r requirements.txt
 - python src/ingesta.py
