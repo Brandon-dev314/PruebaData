@@ -25,15 +25,15 @@ En otras palabras, se trata de anticipar los costos de los P, los cuales mediant
 
 - **Fuentes:** los archivos individuales(x.CSV,Y.csv,Z.csv) los valide contra historicos_equipos.csv, encontre 0 discrepancias en 3530 fechas comunes, con diferencia maxima de 0.00000, use los individuales porque cubren mas periodo (X llegar a Abril 2024)
 
-- **Huecos en el calendario:**las 105 celdas vacías en días hábiles corresponden a festivos y días sin cotización, no a datos perdidos (días libres), en estos casos ocupe el metodo LOCF(Last observation carried forward), lo cual lo limite a 5 días hábiles,para no extender el supuesto precio constante más alla de donde se sostiene.
+- **Huecos en el calendario:** las 105 celdas vacías en días hábiles corresponden a festivos y días sin cotización, no a datos perdidos (días libres), en estos casos ocupe el metodo LOCF(Last observation carried forward), lo cual lo limite a 5 días hábiles,para no extender el supuesto precio constante más alla de donde se sostiene.
 
-- **Celdas no imputadas:**las 3 celdas del 2010-01-01 se dejaron vacías y la razón del porque estan vacias es porque LOCF arrastra el ultimo valor registrado y en esa fecha todavia no hay fecha registrada.
+- **Celdas no imputadas:** las 3 celdas del 2010-01-01 se dejaron vacías y la razón del porque estan vacias es porque LOCF arrastra el ultimo valor registrado y en esa fecha todavia no hay fecha registrada.
 
-- **Frecuencia de análisis:**la materia Y se repite el mismo valor del 55.7% de los días, no es una serie diaria real aunque el archivo tenga una fila por día.
+- **Frecuencia de análisis:** la materia Y se repite el mismo valor del 55.7% de los días, no es una serie diaria real aunque el archivo tenga una fila por día.
 
-- **Agregación:**lo que me pude dar cuenta, ademas, es que el precio de compra de un equipo refleja el costo de los insumos durante el periodo de producción.
+- **Agregación:** lo que me pude dar cuenta, ademas, es que el precio de compra de un equipo refleja el costo de los insumos durante el periodo de producción.
 
-- **El formato de fechas Y.csv:**interpretado como DD/MM por consistencias interna entre las fechas por ejemplo: 12/9, 11/9, 8/9 y 7/9 en orden descendente.
+- **El formato de fechas Y.csv:** interpretado como DD/MM por consistencias interna entre las fechas por ejemplo: 12/9, 11/9, 8/9 y 7/9 en orden descendente.
 
 # 3. Formas para resolver el caso y la opción tomada
 
