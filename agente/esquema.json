@@ -1,0 +1,32 @@
+[
+    {"type": "function", "function": {
+        "name": "consultar_pronostico",
+        "description": "Da la proyeccion de precio de un equipo para los proximos meses, con escenario bajo y alto. Usar cuando pregunten cuanto va a costar un equipo, por el pronostico o por el presupuesto.",
+        "parameters": {"type": "object", "properties": {
+            "equipo": {"type": "string", "description": "Equipo1 o Equipo2"},
+            "mes": {"type": "string", "description": "opcional, formato YYYY-MM"}},
+            "required": ["equipo"]}}},
+
+    {"type": "function", "function": {
+        "name": "explicar_modelo",
+        "description": "Explica de que depende el precio de un equipo: que materias entraron al modelo, con que peso, cuales se descartaron y que tan bien predice. Usar cuando pregunten por que, de que depende o que tan confiable es.",
+        "parameters": {"type": "object", "properties": {
+            "equipo": {"type": "string", "description": "Equipo1 o Equipo2"}},
+            "required": ["equipo"]}}},
+
+    {"type": "function", "function": {
+        "name": "simular_escenario",
+        "description": "Calcula cuanto costaria un equipo si una materia prima sube o baja un porcentaje. Usar para preguntas de 'que pasa si', sensibilidad o riesgo.",
+        "parameters": {"type": "object", "properties": {
+            "equipo": {"type": "string", "description": "Equipo1 o Equipo2"},
+            "materia": {"type": "string", "description": "X, Y o Z"},
+            "cambio_pct": {"type": "number", "description": "cambio en porcentaje, ej 15 o -10"}},
+            "required": ["equipo", "materia", "cambio_pct"]}}},
+
+    {"type": "function", "function": {
+        "name": "buscar_contexto_mercado",
+        "description": "Busca informacion externa actual: tendencias de precios de materias primas, noticias del sector construccion, contexto economico. Usar cuando pregunten por el contexto de mercado, que esta pasando con algun commodity, o para complementar el pronostico con el mundo real.",
+        "parameters": {"type": "object", "properties": {
+            "consulta": {"type": "string", "description": "que buscar, en espaniol o ingles"}},
+            "required": ["consulta"]}}}
+]

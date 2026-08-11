@@ -1,0 +1,7 @@
+equipo,precio,coef,t,p,significativa,r2
+Price_Equipo1,Price_X,0.0257,5.1,9.500603669475447e-07,True,0.993
+Price_Equipo1,Price_Y,0.9674,132.31,1.4797163174386244e-164,True,0.993
+Price_Equipo1,Price_Z,-0.0008,-0.07,0.9416775284163423,False,0.993
+Price_Equipo2,Price_X,0.0313,6.97,7.972253349453778e-11,True,0.9893
+Price_Equipo2,Price_Y,0.2015,30.95,3.4240103570373774e-69,True,0.9893
+Price_Equipo2,Price_Z,0.7621,82.56,1.7789437341447715e-132,True,0.9893

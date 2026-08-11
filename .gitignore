@@ -1,0 +1,11 @@
+# Editor
+.vscode/
+*.code-workspace
+.DS_Store
+
+# Entornos y secretos
+.env
+*.env
+!.env.example
+
+caso/

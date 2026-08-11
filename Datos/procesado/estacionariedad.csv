@@ -1,0 +1,11 @@
+serie,transformacion,adf,kps,estacionario
+Price_X,niveles,0.4046,0.0228,False
+Price_Y,niveles,0.3014,0.1,False
+Price_Z,niveles,0.0426,0.1,True
+Price_Equipo1,niveles,0.3123,0.1,False
+Price_Equipo2,niveles,0.029,0.1,True
+Price_X,log-retornos,0.0,0.1,True
+Price_Y,log-retornos,0.0009,0.1,True
+Price_Z,log-retornos,0.0,0.1,True
+Price_Equipo1,log-retornos,0.0008,0.1,True
+Price_Equipo2,log-retornos,0.0,0.1,True
