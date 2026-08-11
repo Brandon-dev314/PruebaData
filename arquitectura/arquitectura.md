@@ -69,8 +69,8 @@ Facturación por asignación de recursos por segundo, con escalado a cero.
 
 - **Gratis por suscripción/mes:** 180,000 vCPU-segundos, 360,000 GiB-segundos y 2 millones
   de peticiones HTTP.
-- **Tarifa activa (East US, 2026):** ~$0.000024 por vCPU-segundo y ~$0.000003 por GiB-segundo.
-- **Tarifa inactiva:** ~$0.000008 por vCPU-segundo y ~$0.000001 por GiB-segundo.
+- **Tarifa activa (East US, 2026):** ~$0.000024 por vCPU-segundo y $0.000003 por GiB-segundo.
+- **Tarifa inactiva:** $0.000008 por vCPU-segundo y $0.000001 por GiB-segundo.
 - **Escalado a cero:** si la aplicación baja a cero réplicas, no hay cargo de cómputo.
 - **Réplica considerada inactiva** cuando usa menos de 0.01 vCPU y recibe menos de 1,000
   bytes/segundo de tráfico.
@@ -113,10 +113,10 @@ se debe a la necesidad de industrializar, escalar y automatizar el ciclo de vida
 
 | Servicio | Supuesto de uso | Costo estimado (USD/mes) |
 |---|---|---:|
-| Microsoft Fabric F2 | Pago por uso, siempre encendida | ~262 |
-| Microsoft Fabric F2 | Alternativa: reserva 1 año | ~156 |
+| Microsoft Fabric F2 | Pago por uso, siempre encendida | 262 |
+| Microsoft Fabric F2 | Alternativa: reserva 1 año | 156 |
 | OneLake | < 1 GB de datos | < 1 |
-| Azure OpenAI (GPT-4o mini) | ~10M tokens/mes | ~3 |
+| Azure OpenAI (GPT-4o mini) | 10M tokens/mes | 3 |
 | Container Apps | 0.5 vCPU con escalado a cero | dentro del nivel gratuito o pocos USD |
 | Azure ML | Cómputo bajo demanda, pocas horas/mes | variable |
 
