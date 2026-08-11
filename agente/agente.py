@@ -1,7 +1,10 @@
 """
-Este codigo es un codigo reciclado que ya tenia de un agente en produccion, pero lo adapte para que funcione con streanlit
+Este codigo es un codigo reciclado que ya tenia de un agente en produccion, pero lo adapte para que funcione con streamlit
+https://github.com/Brandon-dev314/devagent
 y con el modelo gpt-40-mini, que es mas barato y rapido que gpt-4o. La idea es que el agente pueda responder preguntas sobre los costos de equipos
 """
+
+
 import os
 import json
 from pathlib import Path
