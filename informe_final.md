@@ -11,7 +11,7 @@ La proyección a 6 meses entrega rangos de confianza del 90% que pueden ir varia
 Más información en los siguientes enlaces:
 - 1. [Notebook con el análisis completo](notebook/pre_ingesta.ipynb)
 - 2. [Reporte de arquitectura](arquitectura/arquitectura.md)
-- 3. [Dashboard](reporte.pdf)
+- 3. [Dashboard](reporte_dashboard.pdf)
 - 4. https://pruebadata-production.up.railway.app/
 
 ## 1. Explicación del caso
