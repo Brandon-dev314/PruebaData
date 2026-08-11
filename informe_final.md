@@ -2,11 +2,11 @@
 Brandon Enrique Eroza Torres: tbdonran.23@gmail.com
 
 ## Resumen
-El análisis se identificó, el precio de cada equipo como se comporta de manera diferente, por ejemplo el **Equipo 1** depende de un 97% de la materias prima Y cerca del 98%, y el **Equipo 2** en un 76% de Z. En el X.csv aunque es bastante significativa, tiene un pero menor al 4% en ambos casos(esto se puede visualizar en el dashboard adjunto).
+El análisis se identificó, el precio de cada equipo como se comporta de manera diferente, por ejemplo el **Equipo 1** depende de un 97% de la materias prima Y  y el **Equipo 2** en un 76% de Z. En el X.csv aunque es bastante significativa, tiene al menos un 4% en ambos casos(esto se puede visualizar en el dashboard adjunto).
 
-El modelo alcanza un error histórico de 0.33% cuando los precios de las materias primas del mes se vinculan, el prognóstico no está en el modelo, sino en un futuro de 6 meses, a mas del 95% del error proviene de no saber donde estaran esas materias primas.
+El modelo alcanza un error histórico de 0.33% cuando los precios de las materias primas del mes se vinculan, el pronóstico no está en el modelo, sino en un futuro de 6 meses, a mas del 95% del error proviene de no saber donde estarán esas materias primas.
 
-La proyección a 6 meses entrega rangos de confianza del 90% que pueden ir variando de acuerdo al primer mes que puede ser de 9% hasta el sexto mes que puede ser 34%. Mi recomendacion es basicamente presupuestar con el rango y priorizar la negociación.
+La proyección a 6 meses entrega rangos de confianza del 90% que pueden ir variando de acuerdo al primer mes que puede ser de 9% hasta el sexto mes que puede ser 34%. Mi recomendación es básicamente presupuestar con el rango y priorizar la negociación.
 
 Más información en los siguientes enlaces:
 - 1. [Notebook con el análisis completo](notebook/pre_ingesta.ipynb)
@@ -16,7 +16,7 @@ Más información en los siguientes enlaces:
 
 ## 1. Explicación del caso
 
-Una constructora de obras, realiza de manera habitual la compra de dos tipos de equipos cuya determinación final del precio queda a disposcion en la naturaleza del comportamiento de tres de las materias primas (que son el conjunto de la X, la Y, la Z). Existen discrepancias en la forma de determinar de cuáles insumos dependen realmente los precios de cada equipo, así como también la dificultad para anticipar estos costos puede originar sesgos de acuerdo a la forma que se manejan todos estos datos.
+Una constructora de obras, realiza de manera habitual la compra de dos tipos de equipos cuya determinación final del precio queda a disposición en la naturaleza del comportamiento de tres de las materias primas (que son el conjunto de la X, la Y, la Z). Existen discrepancias en la forma de determinar de cuáles insumos dependen realmente los precios de cada equipo, así como también la dificultad para anticipar estos costos puede originar sesgos de acuerdo a la forma que se manejan todos estos datos.
 
 El planteamiento de la solución conecta con el modelo de negocio de la empresa y pasa por la identificación de las relaciones entre materias primas y equipos, la construcción de una proyección de costos de carácter mensual que contemple la incertidumbre, la implementación de un agente de IA que sea capaz de contestar sobre los resultados cruzándolos con la información de contexto del mercado, así como el planteamiento de una arquitectura cloud para pasar a producción la solución (el reporte lo pueden encontrar bajo el título: reporte_arquitectura.md)
 
@@ -24,15 +24,15 @@ En otras palabras, se trata de anticipar los costos de los P, los cuales mediant
 
 ## 2. Supuestos
 
-- **Fuentes:** los archivos individuales(x.CSV,Y.csv,Z.csv) los valide contra historicos_equipos.csv, encontre 0 discrepancias en 3530 fechas comunes, con diferencia maxima de 0.00000, use los individuales porque cubren mas periodo (X llegar a Abril 2024)
+- **Fuentes:** los archivos individuales(x.CSV,Y.csv,Z.csv) los valide contra historicos_equipos.csv, encontré 0 discrepancias en 3530 fechas comunes, con diferencia máxima de 0.00000, use los individuales porque cubren mas periodo (X llegar a Abril 2024)
 
-- **Huecos en el calendario:** las 105 celdas vacías en días hábiles corresponden a festivos y días sin cotización, no a datos perdidos (días libres), en estos casos ocupe el metodo LOCF(Last observation carried forward), lo cual lo limite a 5 días hábiles,para no extender el supuesto precio constante más alla de donde se sostiene.
+- **Huecos en el calendario:** las 105 celdas vacías en días hábiles corresponden a festivos y días sin cotización, no a datos perdidos (días libres), en estos casos ocupe el método LOCF(Last observation carried forward), lo cual lo limite a 5 días hábiles, para no extender el supuesto precio constante más alla de donde se sostiene.
 
-- **Celdas no imputadas:** las 3 celdas del 2010-01-01 se dejaron vacías y la razón del porque estan vacias es porque LOCF arrastra el ultimo valor registrado y en esa fecha todavia no hay fecha registrada.
+- **Celdas no imputadas:** las 3 celdas del 2010-01-01 se dejaron vacías y la razón del porque están vacías es porque LOCF arrastra el ultimo valor registrado y en esa fecha todavía no hay fecha registrada.
 
 - **Frecuencia de análisis:** la materia Y se repite el mismo valor del 55.7% de los días, no es una serie diaria real aunque el archivo tenga una fila por día.
 
-- **Agregación:** lo que me pude dar cuenta, ademas, es que el precio de compra de un equipo refleja el costo de los insumos durante el periodo de producción.
+- **Agregación:** lo que me pude dar cuenta, además, es que el precio de compra de un equipo refleja el costo de los insumos durante el periodo de producción.
 
 - **El formato de fechas Y.csv:** interpretado como DD/MM por consistencias interna entre las fechas por ejemplo: 12/9, 11/9, 8/9 y 7/9 en orden descendente.
 
@@ -71,11 +71,11 @@ La razon del porque ocurre es cuando le aplique una transformacion de más a los
 
 Las elasticidades sumen 1 implica retornos constantes, en otras palabras, si todos los insumos suben 10% el equipo sube 10%. Por lo que me dice que se comporta como una canasta ponderada de sus insumos.
 
-Z (price_z) queda fuera en consideracion del equipo1 1 porque su P = 0.069 y con coeficiente negativo.
+Z (price_z) queda fuera en consideración del equipo1 porque su P = 0.069 y con coeficiente negativo.
 
 ## Validación fuera de muestra
 
-Backtest con ventan expansiva, en cada se mes se va reajusando solo usando la informacion previsa, y predice el mes siguiente.
+Backtest con venta expansiva, en cada se mes se va reajustando solo usando la información prevista, y predice el mes siguiente.
 
 | Equipo | MAPE modelo | MAPE naive | Reducción del error |
 |---|---:|---:|---:|
@@ -86,9 +86,9 @@ Backtest con ventan expansiva, en cada se mes se va reajusando solo usando la in
 
 
 ## Limitaciones
-- El model del equipo 2 conserva autoorrelacion positiva en los residuos
+- El modelo del equipo 2 conserva autocorrelación positiva en los residuos
 (DW = 1.17 y Ljung-box < 0.001)
-- X es estadísticamente significativa(t=29) pero economicamente menor
+- X es estadísticamente significativa(t=29) pero económicamente menor
 
 # 5. Proyección de costos y horizonte de predicción
 
@@ -112,7 +112,7 @@ Elegí 6 meses como límite por una razón práctica: a 6 meses el rango de prec
 
 ## Alcance honesto del pronóstico
 
-Aquí reporto lo que es la proyeccion de mi pronóstico  contra el método más simple posible.
+Aquí reporto lo que es la proyección de mi pronóstico  contra el método más simple posible.
 
 | Mes | Equipo 1 | Equipo 2 |
 |---|---|---|
@@ -127,8 +127,8 @@ Aquí reporto lo que es la proyeccion de mi pronóstico  contra el método más 
 
 # 6. Futuros ajustes o mejoras
 
- - 1. **Monitoreo**: importante monitorear las elasticidades, si la suma se aleja de 1, el modelo debe reestimarse ya que posiblemente cambio la estructura de sus costor, en mi opinion no es dificil de implementar y es como una alerta.
- - 2. **Reentrenamiento mensual automatizado:** es importante contemplar la estructura cloud y hacer comparacion masiva de que conviene para estos casos, en mi caso por el tiempo limite desarrolle un reporte simple sobre la arquitectura azure (los costos pueden variar)
+ - 1. **Monitoreo**: importante monitorear las elasticidades, si la suma se aleja de 1, el modelo debe reestimarse ya que posiblemente cambio la estructura de sus costo, en mi opinión no es difícil de implementar y es como una alerta.
+ - 2. **Reentrenamiento mensual automatizado:** es importante contemplar la estructura cloud y hacer comparación masiva de que conviene para estos casos, en mi caso por el tiempo limite desarrolle un reporte simple sobre la arquitectura azure (los costos pueden variar)
 
  - 3. **Mejora al agente IA:** El prototipo ya cubre con 4 funciones que es el pronóstico, explicar el model, simular escenarios y buscar contexto del mercado, lo que faltaria es hacer mas dinamico de manera que se vaya actualizando ya sea con el presepuesto actual de empresa y así como tambien generar reportes en automatico en PDF o Excel, se podria pero llevaria tiempo.
 
