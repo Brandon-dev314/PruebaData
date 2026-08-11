@@ -3,7 +3,7 @@
 - [Informe completo](informe_final.md) — análisis, resultados y proyección
 - [Notebook del análisis](notebook/pre_ingesta.ipynb) — proceso completo con los descartes
 - [Arquitectura cloud](arquitectura/reporte_arquitectura.md) — propuesta en Azure
-- pruebadata-production.up.railway.app
+- [pruebadata-production.up.railway.app](https://pruebadata-production.up.railway.app/)
 
 ## Como ejecutar
 
