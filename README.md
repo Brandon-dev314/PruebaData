@@ -1,5 +1,5 @@
 # Entregables
-
+Brandon Enrique Eroza Torres (tbdonran.23@gmail.com)
 - [Informe completo](informe_final.md) 
 - [Notebook del análisis](notebook/pre_ingesta.ipynb)
 - [Arquitectura cloud](arquitectura/reporte_arquitectura.md) 
